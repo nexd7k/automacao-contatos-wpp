@@ -9,7 +9,7 @@ chrome_path = r'"C:/Program Files/Google/Chrome/Application/chrome.exe"'
 webbrowser.get(f'{chrome_path} %s').open('https://web.whatsapp.com/')
 sleep(15)
 
-# Ler planilha e guardar informações sobre nome, telefone e data de vencimento
+# Ler planilha e guardar informações sobre nome, telefone e mensagem 
 workbook = openpyxl.load_workbook('clientes.xlsx')
 pagina_clientes = workbook['Sheet1']
 
@@ -39,3 +39,4 @@ for linha in pagina_clientes.iter_rows(min_row=2):
         with open('erros.csv','a',newline='',encoding='utf-8') as arquivo:
             arquivo.write(f'{nome},{telefone}{os.linesep}')
     
+
